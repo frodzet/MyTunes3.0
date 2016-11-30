@@ -65,21 +65,20 @@ public class AddSongViewController implements Initializable
     {
         songModel = SongModel.getInstance();
 
-        txtPath.textProperty().addListener((observable, oldValue, newValue)
-                -> 
-                {
-                    if (newValue.isEmpty())
-                    {
-                        txtTitle.setDisable(true);
-                        txtArtist.setDisable(true);
-                        txtGenre.setDisable(true);
-                    }
-                    else
-                    {
-                        txtTitle.setDisable(false);
-                        txtArtist.setDisable(false);
-                        txtGenre.setDisable(false);
-                    }
+        txtPath.textProperty().addListener((observable, oldValue, newValue) -> 
+        {
+            if (newValue.isEmpty())
+            {
+                txtTitle.setDisable(true);
+                txtArtist.setDisable(true);
+                txtGenre.setDisable(true);
+            }
+            else
+            {
+                txtTitle.setDisable(false);
+                txtArtist.setDisable(false);
+                txtGenre.setDisable(false);
+            }
         });
     }
 

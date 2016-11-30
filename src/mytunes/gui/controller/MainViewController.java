@@ -5,9 +5,12 @@
  */
 package mytunes.gui.controller;
 
+import java.io.File;
 import java.io.IOException;
 import java.net.URL;
 import java.util.ResourceBundle;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.fxml.FXML;
@@ -30,6 +33,7 @@ import javafx.stage.Modality;
 import javafx.stage.Stage;
 import mytunes.be.Song;
 import mytunes.bll.SongManager;
+import mytunes.dal.SongDAO;
 import mytunes.gui.model.SongModel;
 
 /**
@@ -38,7 +42,7 @@ import mytunes.gui.model.SongModel;
  */
 public class MainViewController implements Initializable
 {
-
+    
     private SongManager songManager;
     ObservableList<Song> songs = FXCollections.observableArrayList();
     private SongModel songModel;
@@ -142,8 +146,7 @@ public class MainViewController implements Initializable
     {
         songManager.getMediaPlayer().setVolume(sliderVolume.getValue() / 100);
     }
-
-    @Override
+    
     public void initialize(URL url, ResourceBundle rb)
     {
         songManager = new SongManager();
