@@ -59,7 +59,7 @@ public class MainViewController implements Initializable {
     @FXML
     private TableColumn<Song, String> colGenre;
     @FXML
-    private TableColumn<Song, Double> colTime;
+    private TableColumn<Song, Double> colDuration;
     @FXML
     private TableColumn<Song, Double> colRating;
     @FXML
@@ -83,7 +83,7 @@ public class MainViewController implements Initializable {
         FXMLLoader loader = new FXMLLoader(getClass().getResource("/mytunes/gui/view/AddSongView.fxml"));
         Parent root = loader.load();
 
-        AddSongViewController AddSongController = loader.getController();
+        AddSongViewController addSongViewController = loader.getController();
 
         Stage AddSongViewStage = new Stage();
         AddSongViewStage.setScene(new Scene(root));
@@ -152,7 +152,7 @@ public class MainViewController implements Initializable {
         colName.setCellValueFactory(new PropertyValueFactory<>("title"));
         colArtist.setCellValueFactory(new PropertyValueFactory<>("artist"));
         colGenre.setCellValueFactory(new PropertyValueFactory<>("genre"));
-        colTime.setCellValueFactory(new PropertyValueFactory<>("duration"));
+        colDuration.setCellValueFactory(new PropertyValueFactory<>("duration"));
         colRating.setCellValueFactory(new PropertyValueFactory<>("rating"));
         setSongs();
         tableSongs.setItems(songs);
