@@ -3,6 +3,7 @@ package mytunes.bll;
 import java.io.File;
 import javafx.scene.media.Media;
 import javafx.scene.media.MediaPlayer;
+import javafx.util.Duration;
 import mytunes.be.Song;
 
 /**
@@ -12,7 +13,8 @@ import mytunes.be.Song;
  *
  * @author Simon Birkedal
  */
-public class SongManager {
+public class SongManager
+{
 
     private Song currentSong;
     private MediaPlayer player;
@@ -32,6 +34,7 @@ public class SongManager {
             player = new MediaPlayer(media);
         }
         player.play();
+
     }
 
     /**
@@ -39,7 +42,10 @@ public class SongManager {
      */
     public void pauseSong()
     {
-        player.pause();
+        if (currentSong != null)
+        {
+            player.pause();
+        }
     }
 
     /**
@@ -66,5 +72,25 @@ public class SongManager {
     public Song getCurrentlyPlayingSong()
     {
         return this.currentSong;
+    }
+
+    /**
+     * Gets the songs length.
+     * @return Returns the length of the song.
+     */
+    public Duration getSongLength()
+    {
+        return player.getTotalDuration();
+    }
+    
+    
+    public Duration getSongTimeElapsed()
+    {
+        return player.getCurrentTime();
+    }
+
+    public MediaPlayer getMediaPlayer()
+    {
+        return player;
     }
 }
