@@ -15,7 +15,7 @@ public class Song {
     private String title;
     private String artist;
     private String genre;
-    private double duration;
+    private String duration;
     private int rating;
     private String path;
 
@@ -30,7 +30,7 @@ public class Song {
      * @param path The song path - this is the exact path of the song e.g.
      * C:\\Desktop\\MyMp3File.mp3
      */
-    public Song(String title, String artist, String genre, double duration, int rating, String path)
+    public Song(String title, String artist, String genre, String duration, int rating, String path)
     {
         this.title = title;
         this.artist = artist;
@@ -42,7 +42,6 @@ public class Song {
 
     /**
      * Gets the id of the song.
-     *
      * @return Returns an integer value representing the id of this song.
      */
     public int getId()
@@ -52,7 +51,6 @@ public class Song {
 
     /**
      * Gets the title of this song.
-     *
      * @return Returns the song's title.
      */
     public String getTitle()
@@ -62,7 +60,6 @@ public class Song {
 
     /**
      * Gets the artist of the song.
-     *
      * @return Returns the song's artist name.
      */
     public String getArtist()
@@ -72,7 +69,6 @@ public class Song {
 
     /**
      * Gets the genre of the song.
-     *
      * @return Returns the genre represented by a string.
      */
     public String getGenre()
@@ -83,10 +79,9 @@ public class Song {
     // Needs rework, probably going to use a TimeSpan object.
     /**
      * Gets the duration of the song.
-     *
      * @return Returns the duration of the song.
      */
-    public double getDuration()
+    public String getDuration()
     {
         return duration;
     }
