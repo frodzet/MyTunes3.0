@@ -1,8 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import java.lang.*?>
-<?import javafx.scene.control.*?>
-<?import javafx.scene.layout.*?>
 <?import javafx.scene.control.Button?>
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.control.ListView?>
@@ -16,17 +13,20 @@
 <?import javafx.scene.control.TextField?>
 <?import javafx.scene.layout.AnchorPane?>
 
-<AnchorPane id="AnchorPane" prefHeight="573.0" prefWidth="783.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="mytunes.gui.controller.MainViewController">
+<AnchorPane id="AnchorPane" prefHeight="573.0" prefWidth="783.0" xmlns="http://javafx.com/javafx/8.0.60" xmlns:fx="http://javafx.com/fxml/1" fx:controller="mytunes.gui.controller.MainViewController">
    <children>
       <ProgressBar fx:id="progressTime" layoutX="181.0" layoutY="59.0" minHeight="-Infinity" prefHeight="8.0" prefWidth="406.0" progress="0.0" />
       <TableView fx:id="tableSongs" layoutX="173.0" layoutY="116.0" onMousePressed="#tableSelected" prefHeight="472.0" prefWidth="634.0" AnchorPane.bottomAnchor="5.0" AnchorPane.rightAnchor="5.0">
         <columns>
-          <TableColumn fx:id="colName" prefWidth="277.0" text="Name" />
-          <TableColumn fx:id="colArtist" prefWidth="159.0" text="Artist" />
-            <TableColumn fx:id="colGenre" minWidth="0.0" prefWidth="78.0" text="Genre" />
-            <TableColumn fx:id="colTime" prefWidth="51.0" text="Time" />
-            <TableColumn fx:id="colRating" prefWidth="68.0" text="Rating" />
+          <TableColumn fx:id="colName" minWidth="200.0" prefWidth="291.0" text="Name" />
+          <TableColumn fx:id="colArtist" minWidth="100.0" prefWidth="137.0" text="Artist" />
+            <TableColumn fx:id="colGenre" minWidth="65.0" prefWidth="52.0" text="Genre" />
+            <TableColumn fx:id="colDuration" minWidth="70.0" prefWidth="72.0" text="Duration" />
+            <TableColumn fx:id="colRating" minWidth="55.0" prefWidth="68.0" text="Rating" />
         </columns>
+         <columnResizePolicy>
+            <TableView fx:constant="CONSTRAINED_RESIZE_POLICY" />
+         </columnResizePolicy>
       </TableView>
       <MenuBar fx:id="menuBar" prefHeight="29.0" prefWidth="816.0">
         <menus>
