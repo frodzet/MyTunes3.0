@@ -95,8 +95,24 @@ public class MainViewController implements Initializable {
 
     }
 
+    private void loadPlaylistSongView() throws IOException
+    {
+        Stage primStage = (Stage) listPlayList.getScene().getWindow();
+        FXMLLoader loader = new FXMLLoader(getClass().getResource("/mytunes/gui/view/AddPlaylistView.fxml"));
+        Parent root = loader.load();
+
+        Stage AddSongViewStage = new Stage();
+        AddSongViewStage.setScene(new Scene(root));
+
+        AddSongViewStage.initModality(Modality.WINDOW_MODAL);
+        AddSongViewStage.initOwner(primStage);
+
+        AddSongViewStage.show();
+
+    }
+
     @FXML
-    public void handleAddSongButton(ActionEvent event) throws IOException
+    public void handleAddSongButton() throws IOException
     {
         loadAddSongView();
     }
@@ -130,6 +146,7 @@ public class MainViewController implements Initializable {
 
                 songManager.playSong(newSong, false);
             }
+            return;
         }
         //Pause button pressed
         else if (isPlaying)
@@ -180,6 +197,12 @@ public class MainViewController implements Initializable {
             btnPlay.setText("Pause");
             isPlaying = true;
         }
+    }
+
+    @FXML
+    private void handleAddPlaylistButton() throws IOException
+    {
+        loadPlaylistSongView();
     }
 
 }
