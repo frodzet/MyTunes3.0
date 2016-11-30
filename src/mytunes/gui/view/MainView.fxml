@@ -1,5 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import java.lang.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
 <?import javafx.scene.control.Button?>
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.control.ListView?>
@@ -13,7 +16,7 @@
 <?import javafx.scene.control.TextField?>
 <?import javafx.scene.layout.AnchorPane?>
 
-<AnchorPane id="AnchorPane" prefHeight="573.0" prefWidth="783.0" xmlns="http://javafx.com/javafx/8.0.60" xmlns:fx="http://javafx.com/fxml/1" fx:controller="mytunes.gui.controller.MainViewController">
+<AnchorPane id="AnchorPane" prefHeight="573.0" prefWidth="783.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="mytunes.gui.controller.MainViewController">
    <children>
       <ProgressBar fx:id="progressTime" layoutX="181.0" layoutY="59.0" minHeight="-Infinity" prefHeight="8.0" prefWidth="406.0" progress="0.0" />
       <TableView fx:id="tableSongs" layoutX="173.0" layoutY="116.0" onMousePressed="#tableSelected" prefHeight="472.0" prefWidth="634.0" AnchorPane.bottomAnchor="5.0" AnchorPane.rightAnchor="5.0">
@@ -33,7 +36,7 @@
           <Menu mnemonicParsing="false" text="File">
             <items>
               <MenuItem mnemonicParsing="false" onAction="#handleAddSongButton" text="Add Song..." />
-                  <MenuItem mnemonicParsing="false" text="Close" />
+                  <MenuItem mnemonicParsing="false" onAction="#handleAddPlaylistButton" text="Add Playlist..." />
             </items>
           </Menu>
           <Menu mnemonicParsing="false" text="Edit">
